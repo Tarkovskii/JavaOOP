@@ -1,6 +1,6 @@
 package src.com.lesson.OOP.Ex2sem;
 
-public class Cat extends Animals implements Speakable, Runable{
+public class Cat extends Animals implements Speakable, Runable, Swimmable{
 
     public Cat(String nikname, int legs, String owner) {
         super(nikname, legs, owner);
@@ -19,5 +19,10 @@ public class Cat extends Animals implements Speakable, Runable{
     @Override
     public String toString() {
         return "Cat" + super.toString();
+    }
+
+    @Override
+    public int swimSpeed() {
+        return 5;
     }
 }

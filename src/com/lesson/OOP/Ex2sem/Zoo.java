@@ -1,5 +1,7 @@
 package src.com.lesson.OOP.Ex2sem;
 
+import com.sun.java.accessibility.util.SwingEventMonitor;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,6 +80,26 @@ public class Zoo {
         for (Flyable item : getFlyable()) {
             if (item.flySpeed() > max) {
                 max = item.flySpeed();
+            }
+        }
+        return max;
+    }
+
+    public List<Swimmable> getSwimmable(){
+        List<Swimmable> result = new ArrayList<>();
+        for (Animals item: animals) {
+            if(item instanceof Swimmable){
+                result.add((Swimmable) item);
+            }
+        }
+        return result;
+    }
+
+    public int getChampionSwim(){
+        int max = 0;
+        for (Swimmable item: getSwimmable()) {
+            if (item.swimSpeed() > max) {
+                max = item.swimSpeed();
             }
         }
         return max;
